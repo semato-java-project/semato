@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@appmain.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.appmain.Appmain">
+   <children>
+      <Pane id="leftpane_menu" prefHeight="600.0" prefWidth="220.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="48.0" layoutX="86.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/assets/account_main.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="93.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" />
+            <Text fill="WHITE" layoutX="77.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ifjogjilbegler" />
+            <JFXButton layoutY="277.0" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="332.0" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="387.0" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="442.0" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="497.0" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
+         </children></Pane>
+      <Pane id="topbar" prefHeight="90.0" prefWidth="1000.0">
+         <children>
+            <Text fill="WHITE" layoutX="245.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oferta">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="957.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/assets/close_icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="47.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SEMATO">
+               <font>
+                  <Font name="Arial Black" size="27.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="68.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C A R  R E N T">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="245.0" layoutY="126.0" prefHeight="110.0" prefWidth="740.0" styleClass="pane">
+         <children>
+            <Pane layoutX="590.0" prefHeight="110.0" prefWidth="150.0" styleClass="pricepane" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
