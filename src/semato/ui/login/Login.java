@@ -20,6 +20,19 @@ public class Login extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.initStyle(StageStyle.TRANSPARENT);
 
+        MovingScene(root,primaryStage);
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+
+    public void MovingScene(Parent root, Stage primaryStage)
+    {
         // for moving stage
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
@@ -36,13 +49,6 @@ public class Login extends Application {
             }
         });
 
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }

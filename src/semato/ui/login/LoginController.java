@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,13 +19,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import semato.ui.appmain.AppmainController;
+import semato.ui.HomePage.HomePageController;
 
 public class LoginController {
 
-    //private double xOffset = 0;
-    //private double yOffset = 0;
-
+    private double xOffset = 0;
+    private double yOffset = 0;
     @FXML
     private ResourceBundle resources;
 
@@ -60,7 +60,7 @@ public class LoginController {
         if(uname.equals("admin") && pass.equals("admin"))
         {
             closeStage();
-            loadAppMain();
+            loadHomePage();
         }
         else{
             login_label.setText("Podano niepoprawne dane.");
@@ -70,40 +70,24 @@ public class LoginController {
         ((Stage)username.getScene().getWindow()).close();
     }
 
-    public void loadAppMain(){
+    public void loadHomePage(){
 
         try{
-            Parent parent = FXMLLoader.load(getClass().getResource("/semato/ui/appmain/appmain.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/semato/ui/HomePage/homepage.fxml"));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
-          //  stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.TRANSPARENT);
 
-            /*
-            // for moving stage
-            parent.setOnMousePressed(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    xOffset = event.getSceneX();
-                    yOffset = event.getSceneY();
-                }
-            });
-            parent.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    stage.setX(event.getScreenX() - xOffset);
-                    stage.setY(event.getScreenY() - yOffset);
-                }
-            });
-            */
+            MovingScene()
+
             Scene scene = new Scene(parent);
             stage.setScene(scene);
             stage.show();
 
 
         }   catch (IOException ex){
-            Logger.getLogger(AppmainController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 
     @FXML
     void initialize() {

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@appmain.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.appmain.Appmain">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@homepage.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.HomePage.HomePage">
    <children>
       <Pane id="leftpane_menu" prefHeight="600.0" prefWidth="220.0">
          <children>
