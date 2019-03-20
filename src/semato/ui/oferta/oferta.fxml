@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.oferta.Oferta">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.oferta.OfertaController">
    <children>
       <Pane id="leftpane_menu" prefHeight="600.0" prefWidth="220.0">
          <children>
@@ -23,7 +23,7 @@
             <JFXButton layoutY="332.0" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
             <JFXButton layoutY="387.0" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
             <JFXButton layoutY="442.0" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="497.0" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton fx:id="LogOutButton" layoutY="497.0" onAction="#logOut" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
          </children></Pane>
       <Pane id="topbar" prefHeight="90.0" prefWidth="1000.0">
          <children>
@@ -49,6 +49,6 @@
             </Text>
          </children>
       </Pane>
-      <AnchorPane layoutX="231.0" layoutY="100.0" prefHeight="490.0" prefWidth="750.0" />
+      <AnchorPane fx:id="holderPane" layoutX="231.0" layoutY="100.0" prefHeight="490.0" prefWidth="750.0" />
    </children>
 </AnchorPane>

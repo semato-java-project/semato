@@ -1,4 +1,4 @@
-package semato.ui;
+package semato.ui.oferta;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
@@ -18,45 +18,45 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class OfertaController{
-
+public class OfertaController extends MainController {
 
     @FXML
     AnchorPane holderPane;
 
     @FXML
-    AnchorPane home;
+    AnchorPane oferta_content_pane;
 
     @FXML
     private ImageView Close;
+
+    @FXML
+    private JFXButton LogOutButton;
 
     @FXML
     void handleCloseAction(MouseEvent event) {
         System.exit(0);
     }
 
-
-
     private void setNode(Node node){
         holderPane.getChildren().clear();
         holderPane.getChildren().add((Node) node);
     }
-/*
+
     private void createPage()
     {
         try {
-            home = FXMLLoader.load(getClass().getResource("/semato/ui/oferta/content_oferta.fxml"));
-            setNode(home);
+            oferta_content_pane = FXMLLoader.load(getClass().getResource("/semato/ui/oferta/content_oferta.fxml"));
+            setNode(oferta_content_pane);
         } catch(IOException e ) {
             e.printStackTrace();
         }
     }
 
-   // @FXML
-   // void logOut(ActionEvent event){
-  //      ((Stage)logOutButton.getScene().getWindow()).close();
-  //      loadPage("login.fxml");
-  //  }
+   @FXML
+   void logOut(ActionEvent event){
+      ((Stage)LogOutButton.getScene().getWindow()).close();
+       loadPage("/semato/ui/login/login.fxml");
+   }
 
     public void loadPage(String path){
 
@@ -67,14 +67,19 @@ public class OfertaController{
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-           // MovingStage(root,stage);
+            MovingStage(root,stage);
         }   catch (IOException ex){
             Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-*/
+
     @FXML
     public void initialize() {
-        //createPage();
+        createPage();
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
     }
 }
