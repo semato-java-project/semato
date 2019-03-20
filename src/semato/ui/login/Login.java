@@ -1,54 +1,27 @@
 package semato.ui.login;
 
-import javafx.application.Application;
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.event.EventHandler;
+import semato.ui.MainController;
 
-public class Login extends Application {
+public class Login extends MainController {
 
-    private double xOffset = 0;
-    private double yOffset = 0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-
-        MovingScene(root,primaryStage);
+        stage.initStyle(StageStyle.TRANSPARENT);
         Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
+        MovingStage(root,stage);
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-
-
-    public void MovingScene(Parent root, Stage primaryStage)
-    {
-        // for moving stage
-        root.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
-        });
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                primaryStage.setX(event.getScreenX() - xOffset);
-                primaryStage.setY(event.getScreenY() - yOffset);
-            }
-        });
-
-    }
-
 }

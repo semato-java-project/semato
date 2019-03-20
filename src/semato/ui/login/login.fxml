@@ -57,7 +57,7 @@
                   <Font name="Corbel Bold" size="33.0" />
                </font>
             </Text>
-            <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="462.0" layoutY="14.0" onMouseClicked="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="462.0" layoutY="14.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/assets/close_icon.png" />
                </image>

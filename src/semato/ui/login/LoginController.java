@@ -8,7 +8,6 @@ import java.util.logging.Logger;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,12 +18,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import semato.ui.HomePage.HomePageController;
+import semato.ui.MainController;
+import semato.ui.OfertaController;
 
-public class LoginController {
+public class LoginController extends MainController {
 
-    private double xOffset = 0;
-    private double yOffset = 0;
     @FXML
     private ResourceBundle resources;
 
@@ -39,7 +37,6 @@ public class LoginController {
 
     @FXML
     private JFXPasswordField password;
-
 
     @FXML
     private Label login_label;
@@ -60,37 +57,42 @@ public class LoginController {
         if(uname.equals("admin") && pass.equals("admin"))
         {
             closeStage();
-            loadHomePage();
+            loadPage("/semato/ui/oferta/oferta.fxml");
         }
         else{
             login_label.setText("Podano niepoprawne dane.");
         }
     }
     private void closeStage(){
-        ((Stage)username.getScene().getWindow()).close();
+        ((Stage)CloseButton.getScene().getWindow()).close();
     }
 
-    public void loadHomePage(){
+
+    public void loadPage(String path){
 
         try{
-            Parent parent = FXMLLoader.load(getClass().getResource("/semato/ui/HomePage/homepage.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
-
-            MovingScene()
-
-            Scene scene = new Scene(parent);
+            Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+            MovingStage(root,stage);
 
 
         }   catch (IOException ex){
-            Logger.getLogger(HomePageController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @FXML
     void initialize() {
+
+    }
+
+    // Dlaczego musialem to nadpisac poniżej? bez tego sie nie buildowalo
+    @Override
+    public void start(Stage primaryStage) throws Exception {
 
     }
 }
