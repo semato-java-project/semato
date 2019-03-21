@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="oferta" prefHeight="600.0" prefWidth="1000.0" stylesheets="@oferta.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.oferta.OfertaController">
+<AnchorPane fx:id="MainAnchorPane" prefHeight="600.0" prefWidth="1000.0" stylesheets="@homepage.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.homepage.HomePageController">
    <children>
       <Pane id="leftpane_menu" prefHeight="600.0" prefWidth="220.0">
          <children>
@@ -19,15 +19,15 @@
             </ImageView>
             <Text fx:id="username" fill="WHITE" layoutX="75.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Witaj, Mietek" textAlignment="CENTER" />
             <Text fill="WHITE" layoutX="22.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="obecnie brak pojazdów w ofercie" textAlignment="CENTER" wrappingWidth="175.4721622467041" />
-            <JFXButton layoutY="277.0" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="332.0" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="277.0" onAction="#changeContentToOferta" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="332.0" onAction="#changeContentToKlienci" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
             <JFXButton layoutY="387.0" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
             <JFXButton layoutY="442.0" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
             <JFXButton fx:id="LogOutButton" layoutY="497.0" onAction="#logOut" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
          </children></Pane>
       <Pane id="topbar" prefHeight="90.0" prefWidth="1000.0">
          <children>
-            <Text fill="WHITE" layoutX="245.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oferta">
+            <Text fx:id="TopPathInfo" fill="WHITE" layoutX="245.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oferta">
                <font>
                   <Font name="Arial" size="23.0" />
                </font>

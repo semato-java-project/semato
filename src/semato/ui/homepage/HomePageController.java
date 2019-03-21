@@ -1,32 +1,24 @@
-package semato.ui.oferta;
+package semato.ui.homepage;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import semato.ui.MainController;
 import semato.ui.login.LoginController;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-public class OfertaController extends MainController {
+
+public class HomePageController extends MainController {
 
     @FXML
-    AnchorPane oferta;
+    AnchorPane MainAnchorPane;
 
     @FXML
     private Text username;
@@ -40,24 +32,20 @@ public class OfertaController extends MainController {
     @FXML
     private JFXButton LogOutButton;
 
-
-    private static OfertaController instance;
-
-    public OfertaController(){
+/*
+    private static HomePageController instance;
+    public HomePageController(){
         instance = this;
     }
-
-    public static OfertaController getInstance(){
+    public static HomePageController getInstance(){
         return instance;
     }
-
+*/
     public void setUsername(String uname){
         this.username.setText(uname);
     }
 
     private void setNode(Node node){
-
-
         holderPane.getChildren().clear();
         holderPane.getChildren().add((Node) node);
     }
@@ -78,14 +66,25 @@ public class OfertaController extends MainController {
        loadPage("/semato/ui/login/login.fxml");
    }
 
+   // Dlaczego musze miec ta funkcje start tutaj, skoro nie chce odpalac apki z tego kontrolera?
     @Override
     public void start(Stage primaryStage) throws Exception {
-
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        createPage(oferta,"/semato/ui/oferta/content_oferta.fxml");
+        createPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
         setUsername("Witaj, " + LoginController.getInstance().getUsername());
     }
+
+    @FXML
+    void changeContentToOferta(ActionEvent event) {
+        createPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
+    }
+
+    @FXML
+    void changeContentToKlienci(ActionEvent event) {
+        createPage(holderPane, "/semato/ui/klienci/content_klienci.fxml");
+    }
+
 }
