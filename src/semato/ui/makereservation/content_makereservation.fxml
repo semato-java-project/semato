@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="makereservation_content_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semato.ui.makereservation.MakeReservationController">
+   <children>
+      <Text layoutX="328.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Make Reservation" />
+      <Pane fx:id="backToOfertaButton" accessibleRole="BUTTON" layoutX="10.0" layoutY="14.0" onMousePressed="#BackToOferta" prefHeight="35.0" prefWidth="128.0">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/assets/back_arrow.png" />
+               </image>
+            </ImageView>
+            <Text fill="#016984" layoutX="36.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wróć do oferty">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

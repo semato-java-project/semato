@@ -35,7 +35,7 @@ public class HomePageController extends MainController {
     @FXML
     private Text TopPathInfo;
 
-/*
+
     private static HomePageController instance;
     public HomePageController(){
         instance = this;
@@ -43,7 +43,7 @@ public class HomePageController extends MainController {
     public static HomePageController getInstance(){
         return instance;
     }
-*/
+
     public void setUsername(String uname){
         this.username.setText(uname);
     }
@@ -53,7 +53,7 @@ public class HomePageController extends MainController {
         holderPane.getChildren().add((Node) node);
     }
 
-    private void createContentPage(AnchorPane Content, String loc)
+    public void createContentPage(AnchorPane Content, String loc)
     {
         try {
             Content = FXMLLoader.load(getClass().getResource(loc));

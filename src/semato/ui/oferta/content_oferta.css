@@ -3,12 +3,28 @@
     -fx-background-color: #E8E8E8;
 }
 
-.ReservationButton
+.OneCarPane:hover
 {
-    -fx-background-color: #242424;
+    -fx-background-color: #d4d4d4;
 }
 
-.ReservationButton:hover
+
+.ReserveButton
+{
+    -fx-background-color: #242424;
+    -fx-text-fill: #FFFFFF;
+    -fx-pref-width: 125;
+    -fx-pref-height: 35;
+}
+
+.ReserveButton:hover
 {
     -fx-background-color: #016984;
+
+}
+
+.Price
+{
+    -fx-fill: #242424;
+    -fx-font-size: 28;
 }
