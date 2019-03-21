@@ -32,7 +32,7 @@
                   <Font name="Arial" size="23.0" />
                </font>
             </Text>
-            <ImageView fx:id="Close" fitHeight="18.0" fitWidth="18.0" layoutX="957.0" layoutY="30.0" onMousePressed="#handleCloseAction" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CloseButton" fitHeight="18.0" fitWidth="18.0" layoutX="957.0" layoutY="30.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../resources/assets/close_icon.png" />
                </image>

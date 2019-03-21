@@ -26,16 +26,16 @@ public class OfertaController extends MainController {
     @FXML
     AnchorPane oferta_content_pane;
 
-    @FXML
-    private ImageView Close;
+    //@FXML
+   // private ImageView Close;
 
     @FXML
     private JFXButton LogOutButton;
 
-    @FXML
-    void handleCloseAction(MouseEvent event) {
-        System.exit(0);
-    }
+   // @FXML
+   // void handleCloseAction(MouseEvent event) {
+    //    System.exit(0);
+  //  }
 
     private void setNode(Node node){
         holderPane.getChildren().clear();
