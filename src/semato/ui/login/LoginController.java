@@ -24,12 +24,6 @@ import semato.ui.oferta.OfertaController;
 public class LoginController extends MainController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private ImageView CloseButton;
 
     @FXML
@@ -42,9 +36,24 @@ public class LoginController extends MainController {
     private Label login_label;
 
 
+    private static LoginController instance;
+
+    public LoginController() {
+        instance = this;
+    }
+
+    public static LoginController getInstance() {
+        return instance;
+    }
+
+    public String getUsername() {
+        return username.getText();
+    }
+
+
     @FXML
     void handleCloseButtonAction(MouseEvent event) {
-    System.exit(0);
+        System.exit(0);
     }
 
     @FXML
@@ -54,47 +63,46 @@ public class LoginController extends MainController {
         String uname = username.getText();
         String pass = password.getText();
 
-        if(uname.equals("admin") && pass.equals("admin"))
-        {
+        if (uname.equals("admin") || uname.equals("Mietek") && pass.equals("admin")) {
             closeStage();
             loadPage("/semato/ui/oferta/oferta.fxml");
-        }
-        else{
+        } else {
             login_label.setText("Podano niepoprawne dane.");
         }
     }
-    private void closeStage(){
-        ((Stage)CloseButton.getScene().getWindow()).close();
+
+    private void closeStage() {
+        ((Stage) CloseButton.getScene().getWindow()).close();
     }
 
 
-    public void loadPage(String path){
+    public void loadPage(String path) {
 
-        try{
+        try {
             Parent root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage(StageStyle.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            MovingStage(root,stage);
+            MovingStage(root, stage);
 
 
-        }   catch (IOException ex){
+        } catch (IOException ex) {
             Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    @FXML
-    void initialize() {
-
     }
 
     // Dlaczego musialem to nadpisac poniżej? bez tego sie nie buildowalo
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        loadPage("login.fxml");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }
-
 

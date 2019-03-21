@@ -3,15 +3,22 @@ package semato.ui;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
-public abstract class MainController extends Application {
+import java.io.IOException;
 
-     private double xOffset = 0;
-     private double yOffset = 0;
+
+public abstract class MainController extends Application implements Initializable{
+
+    private double xOffset = 0;
+    private double yOffset = 0;
 
 
     @FXML
@@ -23,9 +30,8 @@ public abstract class MainController extends Application {
     }
 
 
-    public void MovingStage(Parent root, Stage stage)
-    {
-        // for moving stage
+    public void MovingStage(Parent root, Stage stage) {
+
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -40,6 +46,22 @@ public abstract class MainController extends Application {
                 stage.setY(event.getScreenY() - yOffset);
             }
         });
-
     }
+
+
+    public void loadPage(String path){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource(path));
+            Stage stage = new Stage(StageStyle.TRANSPARENT);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            MovingStage(root,stage);
+        }   catch (IOException ex){
+            //Logger.getLogger(OfertaController.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
+        }
+    }
+
 }
