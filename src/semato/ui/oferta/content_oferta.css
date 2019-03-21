@@ -2,3 +2,13 @@
 {
     -fx-background-color: #E8E8E8;
 }
+
+.ReservationButton
+{
+    -fx-background-color: #242424;
+}
+
+.ReservationButton:hover
+{
+    -fx-background-color: #016984;
+}
