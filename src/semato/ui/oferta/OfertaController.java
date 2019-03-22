@@ -28,6 +28,7 @@ public class OfertaController  {
     void ShowReservationDetails(ActionEvent event) {
         oferta_content_pane.getChildren().clear();
         HomePageController.getInstance().createContentPage(oferta_content_pane,"/semato/ui/makereservation/content_makereservation.fxml");
+        HomePageController.getInstance().setTopPath("Szczegóły rezerwacji");
     }
 
 

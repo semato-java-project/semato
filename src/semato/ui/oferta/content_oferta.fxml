@@ -50,7 +50,7 @@
             </Text>
             <Text layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
             <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
-            <JFXButton layoutX="606.0" layoutY="66.0" styleClass="ReserveButton" text="ZAREZERWUJ" />
+            <JFXButton layoutX="606.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" text="ZAREZERWUJ" />
          </children>
       </Pane>
       <Pane layoutX="-7.0" layoutY="240.0" prefHeight="110.0" prefWidth="750.0" styleClass="OneCarPane">
@@ -72,7 +72,7 @@
             </Text>
             <Text layoutX="234.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Należy zmienić obrazek na mniejszy aby się tak nie skalował, tutaj z bazy opis samochodu się wrzuci" wrappingWidth="220.0" />
             <Text layoutX="656.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="brutto / doba" />
-            <JFXButton layoutX="606.0" layoutY="66.0" styleClass="ReserveButton" text="ZAREZERWUJ" />
+            <JFXButton layoutX="606.0" layoutY="66.0" onAction="#ShowReservationDetails" styleClass="ReserveButton" text="ZAREZERWUJ" />
          </children>
       </Pane>
    </children>

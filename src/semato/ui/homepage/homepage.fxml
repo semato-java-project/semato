@@ -26,11 +26,11 @@
                <font>
                   <Font name="Arial" size="12.0" />
                </font></Text>
-            <JFXButton layoutY="297.0" onAction="#changeContentToOferta" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="352.0" onAction="#changeContentToKlienci" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="407.0" onAction="#changeContentToUstawienia" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton layoutY="462.0" onAction="#changeContentToWypozyczenia" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
-            <JFXButton fx:id="LogOutButton" layoutY="517.0" onAction="#logOut" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="297.0" onAction="#changeContentToOferta" styleClass="menubutton" text="Oferta" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="352.0" onAction="#changeContentToKlienci" styleClass="menubutton" text="Klienci" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="407.0" onAction="#changeContentToUstawienia" styleClass="menubutton" text="Ustawienia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton layoutY="462.0" onAction="#changeContentToWypozyczenia" styleClass="menubutton" text="Wypożyczenia" textFill="WHITE" textOverrun="CLIP" />
+            <JFXButton fx:id="LogOutButton" layoutY="517.0" onAction="#logOut" styleClass="menubutton" text="Wyloguj" textFill="WHITE" textOverrun="CLIP" />
             <Text fill="WHITE" layoutX="55.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panel administratora">
                <font>
                   <Font name="Arial" size="12.0" />

@@ -8,7 +8,7 @@
     -fx-background-color: #016984;
 }
 
-.jfx-button
+.menubutton
 {
     -fx-background-color: #1A1A1A;
 
@@ -17,7 +17,7 @@
     -fx-border-radius: 0;
 }
 
-.jfx-button:hover
+.menubutton:hover
 {
     -fx-background-color: #016984;
 }

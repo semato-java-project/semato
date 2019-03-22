@@ -44,6 +44,11 @@ public class HomePageController extends MainController {
         return instance;
     }
 
+
+    public void setTopPath(String name){
+        TopPathInfo.setText(name);
+    }
+
     public void setUsername(String uname){
         this.username.setText(uname);
     }
@@ -78,36 +83,36 @@ public class HomePageController extends MainController {
     public void initialize(URL location, ResourceBundle resources) {
         createContentPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
         setUsername("Witaj, " + LoginController.getInstance().getUsername());
-        TopPathInfo.setText("Oferta");
+        setTopPath("Oferta");
     }
 
     @FXML
     void changeContentToOferta(ActionEvent event) {
         createContentPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
-        TopPathInfo.setText("Oferta");
+        setTopPath("Oferta");
     }
     @FXML
     public void changeContentToOferta() {
         createContentPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
-        TopPathInfo.setText("Oferta");
+        setTopPath("Oferta");
     }
 
     @FXML
     void changeContentToKlienci(ActionEvent event) {
         createContentPage(holderPane, "/semato/ui/klienci/content_klienci.fxml");
-        TopPathInfo.setText("Klienci");
+        setTopPath("Klienci");
     }
 
     @FXML
     void changeContentToWypozyczenia(ActionEvent event) {
         createContentPage(holderPane, "/semato/ui/wypozyczenia/content_wypozyczenia.fxml");
-        TopPathInfo.setText("Wypożyczenia");
+        setTopPath("Wypożyczenia");
     }
 
     @FXML
     void changeContentToUstawienia(ActionEvent event) {
         createContentPage(holderPane, "/semato/ui/ustawienia/content_ustawienia.fxml");
-        TopPathInfo.setText("Ustawienia");
+        setTopPath("Ustawienia");
     }
 
 }
