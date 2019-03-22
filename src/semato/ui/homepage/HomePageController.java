@@ -86,6 +86,11 @@ public class HomePageController extends MainController {
         createContentPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
         TopPathInfo.setText("Oferta");
     }
+    @FXML
+    public void changeContentToOferta() {
+        createContentPage(holderPane, "/semato/ui/oferta/content_oferta.fxml");
+        TopPathInfo.setText("Oferta");
+    }
 
     @FXML
     void changeContentToKlienci(ActionEvent event) {

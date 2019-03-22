@@ -21,25 +21,12 @@ public class OfertaController  {
     @FXML
     private AnchorPane oferta_content_pane;
 
-
-    private static OfertaController instance;
-    public OfertaController(){
-        instance = this;
-    }
-    public static OfertaController getInstance(){
-        return instance;
-    }
-
-    public AnchorPane getOferta_content_pane(){
-        return this.oferta_content_pane;
-    }
-
     @FXML
     private JFXButton ReserveButton;
 
     @FXML
     void ShowReservationDetails(ActionEvent event) {
-        //oferta_content_pane.getChildren().clear();
+        oferta_content_pane.getChildren().clear();
         HomePageController.getInstance().createContentPage(oferta_content_pane,"/semato/ui/makereservation/content_makereservation.fxml");
     }
 
